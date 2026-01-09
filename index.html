@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CRUD Demo (Web)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Items CRUD (Cloudflare Pages + Workers + D2)</h1>
+
+    <section class="card">
+      <h2>新建 / 编辑</h2>
+      <div class="form-row">
+        <label>名称</label>
+        <input id="name" placeholder="请输入名称" />
+      </div>
+      <div class="form-row">
+        <label>描述</label>
+        <textarea id="desc" placeholder="请输入描述"></textarea>
+      </div>
+      <div class="actions">
+        <button id="saveBtn">保存</button>
+        <button id="resetBtn" class="secondary">重置</button>
+      </div>
+      <div id="editingTip" class="tip" hidden>正在编辑：<span id="editingId"></span></div>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>列表</h2>
+        <button id="reloadBtn" class="secondary">刷新</button>
+      </div>
+      <div id="list"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
